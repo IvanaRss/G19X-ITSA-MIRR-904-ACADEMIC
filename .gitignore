@@ -1,0 +1,9 @@
+backend/.venv/
+backend/__pycache__/
+__pycache__/
+*.py[cod]
+.env
+.env.*
+!.env.example
+pg_hba.conf
+pg_hba.conf.backup
