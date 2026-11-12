@@ -7,3 +7,5 @@ __pycache__/
 !.env.example
 pg_hba.conf
 pg_hba.conf.backup
+
+backend/sial.db

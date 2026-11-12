@@ -1,0 +1,164 @@
+
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Solicitudes | SIAL</title>
+
+    <link rel="stylesheet" href="/static/css/style.css">
+    <link rel="stylesheet"
+          href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css">
+</head>
+<body>
+
+<div class="layout">
+
+    <aside class="sidebar">
+        <div class="brand">
+            <div class="brand-icon">
+                <i class="fas fa-scale-balanced"></i>
+            </div>
+            <div>
+                <h2>SIAL</h2>
+                <span>Aprobaciones Legales</span>
+            </div>
+        </div>
+
+        
+<nav>
+    <a href="/" class="nav-item">
+        <i class="fa-solid fa-house"></i>
+        <span>Panel principal</span>
+    </a>
+
+    <a href="/nueva-solicitud" class="nav-item">
+        <i class="fa-solid fa-file-circle-plus"></i>
+        <span>Nueva solicitud</span>
+    </a>
+
+    <a href="/gestion-solicitudes" class="nav-item active">
+        <i class="fa-solid fa-folder-open"></i>
+        <span>Solicitudes</span>
+    </a>
+
+    <a href="/revision-legal" class="nav-item">
+        <i class="fa-solid fa-clipboard-check"></i>
+        <span>Revisión legal</span>
+    </a>
+
+    <a href="/historial" class="nav-item">
+        <i class="fa-solid fa-clock-rotate-left"></i>
+        <span>Historial</span>
+    </a>
+</nav>
+
+
+        <div class="sidebar-footer">
+            <i class="fas fa-circle-user"></i>
+            <div>
+                <strong>Administrador</strong>
+                <span>Usuario SIAL</span>
+            </div>
+        </div>
+    </aside>
+
+    <main class="main-content">
+
+        <header class="topbar">
+            <div>
+                <span class="breadcrumb">SIAL / Solicitudes</span>
+                <h2>Gestión de solicitudes</h2>
+            </div>
+
+            <a href="/docs" class="btn-primary">
+                <i class="fas fa-plus"></i>
+                Nueva solicitud
+            </a>
+        </header>
+
+        <section class="welcome-section">
+            <div>
+                <h1>Solicitudes legales</h1>
+                <p>Consulta y administra los documentos enviados para aprobación.</p>
+            </div>
+        </section>
+
+        <section class="stats-grid">
+            <article class="stat-card">
+                <span>Total de solicitudes</span>
+                <h2 id="totalSolicitudes">0</h2>
+            </article>
+
+            <article class="stat-card">
+                <span>Pendientes</span>
+                <h2 id="pendientes">0</h2>
+            </article>
+
+            <article class="stat-card">
+                <span>Aprobadas</span>
+                <h2 id="aprobadas">0</h2>
+            </article>
+
+            <article class="stat-card">
+                <span>Rechazadas</span>
+                <h2 id="rechazadas">0</h2>
+            </article>
+        </section>
+
+        <section class="table-section">
+
+            <div class="section-header">
+                <div>
+                    <h2>Listado de solicitudes</h2>
+                    <p>Documentos registrados en la aplicación.</p>
+                </div>
+            </div>
+
+            <div class="filters">
+                <input
+                    type="search"
+                    id="buscador"
+                    placeholder="Buscar por título o solicitante..."
+                >
+
+                <select id="filtroEstado">
+                    <option value="">Todos los estados</option>
+                    <option value="pendiente">Pendiente</option>
+                    <option value="en_revision">En revisión</option>
+                    <option value="aprobada">Aprobada</option>
+                    <option value="rechazada">Rechazada</option>
+                </select>
+            </div>
+
+            <div class="table-container">
+                <table>
+                    <thead>
+                        <tr>
+                            <th>ID</th>
+                            <th>Documento</th>
+                            <th>Tipo</th>
+                            <th>Solicitante</th>
+                            <th>Fecha</th>
+                            <th>Estado</th>
+                            <th>Acciones</th>
+                        </tr>
+                    </thead>
+
+                    <tbody id="tablaSolicitudes">
+                        <tr>
+                            <td colspan="7">Cargando solicitudes...</td>
+                        </tr>
+                    </tbody>
+                </table>
+            </div>
+
+        </section>
+
+    </main>
+</div>
+
+<script src="/static/js/solicitudes.js"></script>
+
+</body>
+</html>

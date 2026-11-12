@@ -1,0 +1,155 @@
+
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Nueva solicitud | SIAL</title>
+
+    <link rel="stylesheet" href="/static/css/style.css">
+    <link rel="stylesheet"
+          href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css">
+</head>
+
+<body>
+
+<div class="layout">
+
+    <aside class="sidebar">
+        <div class="logo">
+            <h2>SIAL</h2>
+            <span>Sistema de Aprobaciones Legales</span>
+        </div>
+
+       
+<nav>
+    <a href="/" class="nav-item">
+        <i class="fas fa-house"></i>
+        <span>Panel principal</span>
+    </a>
+
+    <a href="/nueva-solicitud" class="nav-item active">
+        <i class="fas fa-file-circle-plus"></i>
+        <span>Nueva solicitud</span>
+    </a>
+
+    <a href="/gestion-solicitudes" class="nav-item">
+        <i class="fas fa-folder-open"></i>
+        <span>Solicitudes</span>
+    </a>
+
+    <a href="/revision-legal" class="nav-item">
+        <i class="fas fa-scale-balanced"></i>
+        <span>Revisión legal</span>
+    </a>
+
+    <a href="/historial" class="nav-item">
+        <i class="fas fa-clock-rotate-left"></i>
+        <span>Historial</span>
+    </a>
+</nav>
+
+    </aside>
+
+    <main class="main-content">
+
+        <header class="topbar">
+            <div>
+                <h1>Nueva solicitud</h1>
+                <p>Registra un documento para iniciar su proceso de aprobación legal.</p>
+            </div>
+        </header>
+
+        <section class="table-section">
+
+            <div class="section-header">
+                <div>
+                    <h2>Información del documento</h2>
+                    <p>Completa los siguientes campos para registrar la solicitud.</p>
+                </div>
+            </div>
+
+            <form id="formSolicitud">
+
+                <div class="form-grid">
+
+                    <div class="form-group">
+                        <label for="titulo">Título del documento *</label>
+                        <input
+                            type="text"
+                            id="titulo"
+                            name="titulo"
+                            maxlength="150"
+                            placeholder="Ej. Contrato de prestación de servicios"
+                            required
+                        >
+                    </div>
+
+                    <div class="form-group">
+                        <label for="tipo_documento">Tipo de documento *</label>
+                        <select
+                            id="tipo_documento"
+                            name="tipo_documento"
+                            required
+                        >
+                            <option value="">Selecciona un tipo</option>
+                            <option value="Contrato">Contrato</option>
+                            <option value="Convenio">Convenio</option>
+                            <option value="Política">Política</option>
+                            <option value="Documento jurídico">Documento jurídico</option>
+                            <option value="Otro">Otro</option>
+                        </select>
+                    </div>
+
+                    <div class="form-group">
+                        <label for="solicitante">Nombre del solicitante *</label>
+                        <input
+                            type="text"
+                            id="solicitante"
+                            name="solicitante"
+                            maxlength="120"
+                            placeholder="Escribe tu nombre"
+                            required
+                        >
+                    </div>
+
+                    <div class="form-group full-width">
+                        <label for="descripcion">Descripción del documento *</label>
+                        <textarea
+                            id="descripcion"
+                            name="descripcion"
+                            rows="5"
+                            placeholder="Describe brevemente el propósito del documento..."
+                            required
+                        ></textarea>
+                    </div>
+
+                </div>
+
+                <p class="form-note">* Los campos son obligatorios.</p>
+
+                <div class="form-actions">
+                    <a href="/gestion-solicitudes" class="btn-secondary">
+                        Cancelar
+                    </a>
+
+                    <button type="submit" class="btn-primary">
+                        <i class="fas fa-paper-plane"></i>
+                        Registrar solicitud
+                    </button>
+                </div>
+
+                <div id="mensajeSolicitud" role="status"></div>
+
+            </form>
+
+        </section>
+
+    </main>
+
+</div>
+
+<script src="/static/js/nueva_solicitud.js"></script>
+
+</body>
+</html>

@@ -1,0 +1,160 @@
+
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Panel principal | SIAL</title>
+    <link rel="stylesheet" href="/static/css/style.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.2/css/all.min.css">
+</head>
+<body>
+
+<div class="layout">
+
+    <aside class="sidebar">
+        <div class="brand">
+            <div class="brand-icon"><i class="fa-solid fa-scale-balanced"></i></div>
+            <div>
+                <h2>SIAL</h2>
+                <span>Gestión legal inteligente</span>
+            </div>
+        </div>
+
+        <div class="menu-label">MENÚ PRINCIPAL</div>
+
+        
+<nav>
+    <a href="/" class="nav-item active">
+        <i class="fa-solid fa-house"></i>
+        Panel principal
+    </a>
+
+    <a href="/nueva-solicitud" class="nav-item">
+        <i class="fa-solid fa-file-circle-plus"></i>
+        Nueva solicitud
+    </a>
+
+    <a href="/gestion-solicitudes" class="nav-item">
+        <i class="fa-solid fa-folder-open"></i>
+        Solicitudes
+    </a>
+
+    <a href="/revision-legal" class="nav-item">
+        <i class="fa-solid fa-clipboard-check"></i>
+        Revisión legal
+    </a>
+
+    <a href="/historial" class="nav-item">
+        <i class="fa-solid fa-clock-rotate-left"></i>
+        Historial
+    </a>
+</nav>
+
+
+        <div class="sidebar-bottom">
+    <div class="version">SIAL · Versión 0.2.0</div>
+</div>
+    </aside>
+
+    <main class="main-content">
+
+        <header class="topbar">
+            <div>
+                <span class="breadcrumb">Inicio / Panel principal</span>
+                <h1>Panel principal</h1>
+            </div>
+
+            <div class="user-info">
+                <div class="user-avatar">AD</div>
+                <div>
+                    <strong>Administrador</strong>
+                    <span>Gestión del sistema</span>
+                </div>
+            </div>
+        </header>
+
+        <section class="welcome">
+            <div>
+                <h2>Bienvenido a SIAL</h2>
+                <p>Administra y supervisa las aprobaciones de documentos legales.</p>
+            </div>
+        </section>
+
+
+        <section class="stats-grid">
+
+            <article class="stat-card">
+                <div class="stat-icon blue"><i class="fa-solid fa-folder"></i></div>
+                <div class="stat-info">
+                    <span>Total de solicitudes</span>
+                    <h3 id="totalSolicitudes">0</h3>
+                </div>
+            </article>
+
+            <article class="stat-card">
+                <div class="stat-icon orange"><i class="fa-solid fa-clock"></i></div>
+                <div class="stat-info">
+                    <span>Pendientes</span>
+                    <h3 id="pendientes">0</h3>
+                </div>
+            </article>
+
+            <article class="stat-card">
+                <div class="stat-icon green"><i class="fa-solid fa-circle-check"></i></div>
+                <div class="stat-info">
+                    <span>Aprobadas</span>
+                    <h3 id="aprobadas">0</h3>
+                </div>
+            </article>
+
+            <article class="stat-card">
+                <div class="stat-icon red"><i class="fa-solid fa-circle-xmark"></i></div>
+                <div class="stat-info">
+                    <span>Rechazadas</span>
+                    <h3 id="rechazadas">0</h3>
+                </div>
+            </article>
+
+        </section>
+
+        <section class="content-card">
+            <div class="section-header">
+                <div>
+                    <h2>Solicitudes recientes</h2>
+                    <p>Consulta el estado de los últimos documentos registrados.</p>
+                </div>
+            </div>
+
+            <div class="table-container">
+                <table>
+                    <thead>
+                        <tr>
+                            <th>Documento</th>
+                            <th>Tipo</th>
+                            <th>Solicitante</th>
+                            <th>Fecha</th>
+                            <th>Estado</th>
+                        </tr>
+                    </thead>
+                    <tbody id="tablaSolicitudes">
+                        <tr>
+                            <td colspan="5" class="empty-state">
+                                Cargando solicitudes...
+                            </td>
+                        </tr>
+                    </tbody>
+                </table>
+            </div>
+        </section>
+
+        <footer>
+            SIAL · Sistema Inteligente de Aprobaciones Legales
+        </footer>
+
+    </main>
+</div>
+
+<script src="/static/js/dashboard.js"></script>
+</body>
+</html>
